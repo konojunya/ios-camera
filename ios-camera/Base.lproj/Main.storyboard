@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ios_camera" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,43 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOb-rM-Xbn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="579"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gOb-rM-Xbn" secondAttribute="height" multiplier="335:556" constant="26.142086330935228" id="rNz-x9-aUT"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjk-Y0-PyL">
+                                <rect key="frame" x="163" y="622" width="49" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Gjk-Y0-PyL" secondAttribute="height" multiplier="49:30" id="cua-0F-8Xe"/>
+                                </constraints>
+                                <state key="normal" title="shutter"/>
+                                <connections>
+                                    <action selector="takeIt:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yNo-Sf-GcM"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gjk-Y0-PyL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="147" id="0rB-SQ-nBj"/>
+                            <constraint firstAttribute="trailing" secondItem="gOb-rM-Xbn" secondAttribute="trailing" id="9SM-f8-PTh"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gjk-Y0-PyL" secondAttribute="trailing" constant="147" id="XRO-XY-leo"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Gjk-Y0-PyL" secondAttribute="bottom" constant="15" id="Zcx-to-DXv"/>
+                            <constraint firstItem="gOb-rM-Xbn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eEd-84-KOT"/>
+                            <constraint firstItem="gOb-rM-Xbn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hAu-21-jGX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="gOb-rM-Xbn" id="n0n-1J-rAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>
